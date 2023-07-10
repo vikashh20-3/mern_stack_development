@@ -3,7 +3,7 @@ const imports = require("./import"); //import from the other file
 console.log(imports.i);
 console.log("hi");
 
-var a = 29;
+var a = 9;
 var b = 23;
 var c = 32;
 const arr = [3, "vi", 3, 231];
