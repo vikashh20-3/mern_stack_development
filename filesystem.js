@@ -33,3 +33,7 @@ fs.appendFile(crudpath,"the crud files operation",(err)=>{ // USE appendFile to 
 fs.rename(crudpath,`${dirCrudPath}/crudfiletewo.txt`,(err)=>{ //USE rename  TO RENAME THAT FILE 
   if(!err) console.log("file rename succesfully")
 })
+
+fs.unlinkSync(`${dirCrudPath}/crudfile.txt`,(err)=>{
+  if(!err) console.log(`${crudpath} Deleted succesfully`)
+})
