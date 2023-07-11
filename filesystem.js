@@ -5,7 +5,7 @@ console.log("File Name", __filename); //to show the file name
 
 // Create files in a folder using loop
 
-const path = require("path");
+const path = require("path"); // give us the path 
 const dirPath = path.join(__dirname, "fsfiles"); //It Provides us the path for our folders
 
 fs.writeFileSync(dirPath + "/file.txt", "demo for folder");
