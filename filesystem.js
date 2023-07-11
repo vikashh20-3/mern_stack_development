@@ -12,7 +12,7 @@ const crudpath=`${dirCrudPath}/crudfile.txt`;
 
 // fs.writeFileSync(dirPath + "/file.txt", "demo for folder");
 
-//file  creation with loop
+// // file  creation with loop
 
 // for (i = 2; i < 5; i++) {
 //   fs.writeFileSync(dirPath + `/demofiles${i}`, "demo text");
@@ -28,4 +28,8 @@ fs.appendFile(crudpath,"the crud files operation",(err)=>{ // USE appendFile to 
   else{
     console.log("No Error Detected")
   }
+})
+
+fs.rename(crudpath,`${dirCrudPath}/crudfiletewo.txt`,(err)=>{ //USE rename  TO RENAME THAT FILE 
+  if(!err) console.log("file rename succesfully")
 })
