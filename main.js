@@ -13,7 +13,7 @@ console.warn(a + b + c);
 
 var x = 3;
 let y = 34;
-y = 29;
+y = 29; 
 1;
 const z = 10;
 // z = 32; can't able to change the const value after decalring
