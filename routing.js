@@ -20,10 +20,14 @@ app.get('/profile',(_,resp)=>{
     const user={
         name:'vikku',
         email:'viku@gmail.com',
-        country:'india'
+        country:'india',
+        skills:['html','java','css','c++']
     }
    resp.render('profile',{user})
 });
+app.get('/login',(_,resp)=>{
+    resp.render('login')
+})
 
 app.get('/contact',(_,resp)=>{
     resp.sendFile(`${publicPath}/about.html`)

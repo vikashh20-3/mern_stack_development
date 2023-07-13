@@ -10,13 +10,13 @@ const dirPath = path.join(__dirname, "fsfiles"); //It Provides us the path for o
 const dirCrudPath=path.join(__dirname,"crud-files")//It Provides us the path for our crud-files folder
 const crudpath=`${dirCrudPath}/crudfile.txt`;
 
-// fs.writeFileSync(dirPath + "/file.txt", "demo for folder");
+fs.writeFileSync(dirPath + "/file.txt", "demo for folder");
 
-// // file  creation with loop
+// file  creation with loop
 
-// for (i = 2; i < 5; i++) {
-//   fs.writeFileSync(dirPath + `/demofiles${i}`, "demo text");
-// }
+for (i = 2; i < 5; i++) {
+  fs.writeFileSync(dirPath + `/demofiles${i}`, "demo text");
+}
 
 
 fs.writeFileSync( `${dirCrudPath}/crudfile.txt` , "this is only ")

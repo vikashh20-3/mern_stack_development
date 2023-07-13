@@ -8,12 +8,22 @@
 </head>
 
 <body>
-    <h1>Welcome <%= user.name %>
-    </h1>
-    <H2>Email: <%= user.email%>
-    </H2>
-    <h2>country: <%= user.country%>
-    </h2>
+    <!-- to load html content we have to use hyphen after the percent  -->
+    <%- include('common/header');%>
+        <!-- to show the text we have to use equal to  -->
+        <h1>Welcome <%= user.name %>
+        </h1>
+        <H2>Email: <%= user.email%>
+        </H2>
+        <h2>country: <%= user.country%>
+        </h2>
+        <ul>
+            <% user.skills.forEach((item)=>{ %>
+                <li>
+                    <%= item %>
+                </li>
+                <%}) %>
+        </ul>
 </body>
 
 </html>
