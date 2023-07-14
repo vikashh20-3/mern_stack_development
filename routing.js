@@ -2,11 +2,14 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+//#3
+// const route =express.Router();
 const publicPath=path.join(__dirname,'public')
 
 app.set('view engine','ejs');
+// #method second to impliment middleware on specific routes
 
-//THIS IS APPLICATION LEVEL MIDDLEWARE
+//THIS IS APPLICATION LEVEL MIDDLEWARE APPLICABLE ON ALL ROUTES
 const reqFilter=(req,resp,next)=>{
     console.log(reqFilter);
     if(!req.query.age){
@@ -19,9 +22,14 @@ const reqFilter=(req,resp,next)=>{
     }
     
 }
-app.use(reqFilter)
+///#3
+// route.use(reqFilter)
+// #1
+// THIS WILL IMPLIMENT THIS MIDDLE WARE TO EVERY ROUTE 
+// app.use(reqFilter) 
 
-app.get('',(_,resp)=>{
+//#method one 
+app.get('',(_,resp)=>{ // write reqFilter with the route to use your middleware on specific routes 1
     resp.sendFile(`${publicPath}/index.html`)
 });
 
@@ -40,7 +48,9 @@ app.get('/profile',(_,resp)=>{
     }
    resp.render('profile',{user})
 });
-app.get('/login',(_,resp)=>{
+
+///#2
+app.get('/login',reqFilter,(_,resp)=>{
     resp.render('login')
 })
 
@@ -52,9 +62,13 @@ app.get('/help',(_,resp)=>{
     resp.sendFile(`${publicPath}/help.html`)
 });
 
+
 app.get('*',(_,resp)=>{
     resp.sendFile(`${publicPath}/nopage.html`)
 });
+
+//#3
+// app.use('/',route)
 
 app.listen(5000);
 
